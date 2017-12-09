@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android", "ProblemuRegistravimas.Android\ProblemuRegistravimas.Android.csproj", "{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android.Models", "ProblemuRegistravimas.Android.Models\ProblemuRegistravimas.Android.Models.csproj", "{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android.Http", "ProblemuRegistravimas.Android.Http\ProblemuRegistravimas.Android.Http.csproj", "{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
