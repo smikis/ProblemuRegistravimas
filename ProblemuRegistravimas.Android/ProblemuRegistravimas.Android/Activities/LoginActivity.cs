@@ -3,10 +3,10 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using ProblemuRegistravimas.Android.Http;
-using ProblemuRegistravimas.Android.Models;
+using ProblemuRegistravimas.AndroidProject.Http;
+using ProblemuRegistravimas.AndroidProject.Models;
 
-namespace ProblemuRegistravimas.Android.Activities
+namespace ProblemuRegistravimas.AndroidProject.Activities
 {
     [Activity(Label = "LoginActivity", MainLauncher = true)]
     public class LoginActivity : Activity
@@ -36,7 +36,7 @@ namespace ProblemuRegistravimas.Android.Activities
 
         private void ForgotPasswordLink_Click(object sender, EventArgs e)
         {
-            
+            StartActivity(typeof(CreateProblemActivity));
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

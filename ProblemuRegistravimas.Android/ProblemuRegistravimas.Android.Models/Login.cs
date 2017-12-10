@@ -1,4 +1,4 @@
-﻿namespace ProblemuRegistravimas.Android.Models
+﻿namespace ProblemuRegistravimas.AndroidProject.Models
 {
     public class Login
     {

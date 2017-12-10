@@ -1,6 +1,6 @@
-using ProblemuRegistravimas.Android.Models;
+using ProblemuRegistravimas.AndroidProject.Models;
 
-namespace ProblemuRegistravimas.Android.Http
+namespace ProblemuRegistravimas.AndroidProject.Http
 {
     public interface IHttpService
     {

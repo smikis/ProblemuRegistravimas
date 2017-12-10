@@ -9,7 +9,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProblemuRegistravimas.Android</RootNamespace>
+    <RootNamespace>ProblemuRegistravimas.AndroidProject</RootNamespace>
     <AssemblyName>ProblemuRegistravimas.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
@@ -54,6 +54,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\CreateProblemActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -65,6 +66,9 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Login.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CreateProblem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -82,13 +86,13 @@
     <Folder Include="Resources\mipmap-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProblemuRegistravimas.Android.Http\ProblemuRegistravimas.Android.Http.csproj">
+    <ProjectReference Include="..\ProblemuRegistravimas.Android.Http\ProblemuRegistravimas.AndroidProject.Http.csproj">
       <Project>{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}</Project>
-      <Name>ProblemuRegistravimas.Android.Http</Name>
+      <Name>ProblemuRegistravimas.AndroidProject.Http</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProblemuRegistravimas.Android.Models\ProblemuRegistravimas.Android.Models.csproj">
+    <ProjectReference Include="..\ProblemuRegistravimas.Android.Models\ProblemuRegistravimas.AndroidProject.Models.csproj">
       <Project>{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}</Project>
-      <Name>ProblemuRegistravimas.Android.Models</Name>
+      <Name>ProblemuRegistravimas.AndroidProject.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

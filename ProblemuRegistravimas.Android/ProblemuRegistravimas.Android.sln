@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android", "ProblemuRegistravimas.Android\ProblemuRegistravimas.Android.csproj", "{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.AndroidProject", "ProblemuRegistravimas.Android\ProblemuRegistravimas.AndroidProject.csproj", "{9562CA0F-8360-4A33-BA0F-5015EE8F08C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android.Models", "ProblemuRegistravimas.Android.Models\ProblemuRegistravimas.Android.Models.csproj", "{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.AndroidProject.Models", "ProblemuRegistravimas.Android.Models\ProblemuRegistravimas.AndroidProject.Models.csproj", "{4D272FDE-EBA7-46A1-854A-3E6AC74CD071}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.Android.Http", "ProblemuRegistravimas.Android.Http\ProblemuRegistravimas.Android.Http.csproj", "{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemuRegistravimas.AndroidProject.Http", "ProblemuRegistravimas.Android.Http\ProblemuRegistravimas.AndroidProject.Http.csproj", "{0B1E7408-87D8-4BF1-B860-06EAC2DC87DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

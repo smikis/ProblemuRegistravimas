@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.OS;
 
-namespace ProblemuRegistravimas.Android.Activities
+namespace ProblemuRegistravimas.AndroidProject.Activities
 {
-    [Activity(Label = "ProblemuRegistravimas.Android")]
+    [Activity(Label = "ProblemuRegistravimas.AndroidProject")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

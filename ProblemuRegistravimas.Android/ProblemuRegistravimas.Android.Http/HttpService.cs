@@ -1,10 +1,10 @@
-﻿using ProblemuRegistravimas.Android.Models;
+﻿using ProblemuRegistravimas.AndroidProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ProblemuRegistravimas.Android.Http
+namespace ProblemuRegistravimas.AndroidProject.Http
 {
     public class HttpService : IHttpService
     {
