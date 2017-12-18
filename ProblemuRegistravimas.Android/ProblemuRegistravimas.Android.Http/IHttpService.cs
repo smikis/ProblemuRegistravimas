@@ -9,5 +9,6 @@ namespace ProblemuRegistravimas.AndroidProject.Http
         List<string> GetUsers();
         List<string> GetLocationAutocompleteList(string query);
         List<Problem> GetProblems(string status);
+        Problem GetProblem(int id);
     }
 }

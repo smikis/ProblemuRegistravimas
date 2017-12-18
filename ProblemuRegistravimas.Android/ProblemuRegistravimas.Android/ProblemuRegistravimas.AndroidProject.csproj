@@ -87,6 +87,7 @@
     <Compile Include="Activities\HomeActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\ViewProblem.cs" />
     <Compile Include="Adapters\ContentAdapter.cs" />
     <Compile Include="Adapters\ViewAdapter.cs" />
     <Compile Include="Fragments\ListActiveProblemsFragment.cs" />

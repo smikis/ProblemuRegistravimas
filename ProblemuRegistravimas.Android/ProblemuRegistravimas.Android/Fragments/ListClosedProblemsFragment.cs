@@ -1,6 +1,8 @@
-﻿using Android.OS;
+﻿using Android.Content;
+using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
+using ProblemuRegistravimas.AndroidProject.Activities;
 using ProblemuRegistravimas.AndroidProject.Adapters;
 using ProblemuRegistravimas.AndroidProject.Http;
 using Fragment = Android.Support.V4.App.Fragment;
@@ -28,7 +30,9 @@ namespace ProblemuRegistravimas.AndroidProject.Fragments
 
         private void Adapter_ItemClick(object sender, Models.Problem e)
         {
-
+            Intent i = new Intent(Context, typeof(ViewProblem));
+            i.PutExtra("PROBLEM_ID", e.Id);
+            StartActivity(i);
         }
     }
 }

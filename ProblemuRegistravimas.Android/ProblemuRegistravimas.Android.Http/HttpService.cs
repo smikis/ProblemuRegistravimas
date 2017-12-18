@@ -44,6 +44,11 @@ namespace ProblemuRegistravimas.AndroidProject.Http
             return Cache.Problems;
         }
 
+        public Problem GetProblem(int id)
+        {
+            return Cache.Problems.SingleOrDefault(x => x.Id == id);
+        }
+
         public List<string> GetLocationAutocompleteList(string query)
         {
             var restClient = new RestClient(_googlePlacesApi);

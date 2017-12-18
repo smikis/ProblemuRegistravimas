@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using ProblemuRegistravimas.AndroidProject.Activities;
 using ProblemuRegistravimas.AndroidProject.Adapters;
 using ProblemuRegistravimas.AndroidProject.Http;
 using static Android.Support.V7.Widget.RecyclerView;
@@ -32,7 +34,9 @@ namespace ProblemuRegistravimas.AndroidProject.Fragments
 
         private void Adapter_ItemClick(object sender, Models.Problem e)
         {
-            
+            Intent i = new Intent(Context, typeof(ViewProblem));
+            i.PutExtra("PROBLEM_ID", e.Id);
+            StartActivity(i);
         }
     }
 }

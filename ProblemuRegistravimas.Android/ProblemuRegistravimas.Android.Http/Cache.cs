@@ -20,6 +20,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
         {
            new Problem
                 {
+                    Id= 0,
                     Name = "Test problem",
                     Priority = "Normal",
                     Description = "Test problem description",
@@ -30,6 +31,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
        new Problem
                 {
+                    Id= 1,
                     Name = "Test problem 2 ",
                     Priority = "Normal",
                     Description = "Test problem description 2",
@@ -39,6 +41,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 2,
                     Name = "Test problem",
                     Priority = "Normal",
                     Description = "Test problem description",
@@ -48,6 +51,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 3,
                     Name = "Test problem 2 ",
                     Priority = "Normal",
                     AssignedUser = "tomas",
@@ -58,6 +62,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 4,
                     Name = "Test problem",
                     Priority = "Normal",
                     Description = "Test problem description",
@@ -68,6 +73,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 5,
                     Name = "Test problem 2 ",
                     Priority = "Critical",
                     Description = "Test problem description 2",
@@ -78,6 +84,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 6,
                     Name = "Test problem",
                     Priority = "Critical",
                     Description = "Test problem description",
@@ -88,6 +95,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 7,
                     Name = "Test problem 2 ",
                     Priority = "Critical",
                     Description = "Test problem description 2",
@@ -98,6 +106,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 8,
                     Name = "Test problem",
                     Priority = "Critical",
                     Description = "Test problem description",
@@ -108,6 +117,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 9,
                     Name = "Test problem 2 ",
                     Priority = "Critical",
                     Description = "Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2Test problem description 2Test problem description 2Test problem description 2Test problem description 2 Test problem description 2Test problem description 2",
@@ -118,6 +128,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 10,
                     Name = "Test problem",
                     Priority = "Critical",
                     Description = "Test problem description",
@@ -127,6 +138,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 11,
                     Name = "Test problem 2 ",
                     Priority = "Critical",
                     Description = "Test problem description 2",
@@ -137,6 +149,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 12,
                     Name = "Test problem",
                     Priority = "Critical",
                     Description = "Test problem description Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2",
@@ -147,6 +160,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 13,
                     Name = "Test problem 2 ",
                     Priority = "Major",
                     Description = "Test problem description 2",
@@ -157,6 +171,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 14,
                     Name = "Test problem",
                     Priority = "Major",
                     Description = "Test problem description",
@@ -167,6 +182,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
 
                new Problem
                 {
+                    Id= 15,
                     Name = "Test problem 2 ",
                     Priority = "Major",
                     Closed = true,

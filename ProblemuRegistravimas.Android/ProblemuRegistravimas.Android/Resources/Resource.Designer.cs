@@ -2005,6 +2005,9 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f06007e
 			public const int appbar = 2131099774;
 			
+			// aapt resource value: 0x7f06009c
+			public const int assignButton = 2131099804;
+			
 			// aapt resource value: 0x7f06001b
 			public const int beginning = 2131099675;
 			
@@ -2037,6 +2040,9 @@ namespace ProblemuRegistravimas.AndroidProject
 			
 			// aapt resource value: 0x7f060034
 			public const int clip_vertical = 2131099700;
+			
+			// aapt resource value: 0x7f06009d
+			public const int closeButton = 2131099805;
 			
 			// aapt resource value: 0x7f06001f
 			public const int collapseActionView = 2131099679;
@@ -2185,8 +2191,8 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f06008a
 			public const int loginButton = 2131099786;
 			
-			// aapt resource value: 0x7f06009d
-			public const int logoutMenu = 2131099805;
+			// aapt resource value: 0x7f0600a1
+			public const int logoutMenu = 2131099809;
 			
 			// aapt resource value: 0x7f06007d
 			public const int main_content = 2131099773;
@@ -2236,8 +2242,8 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f06006b
 			public const int priorityTitle = 2131099755;
 			
-			// aapt resource value: 0x7f06009a
-			public const int problemMenu = 2131099802;
+			// aapt resource value: 0x7f06009e
+			public const int problemMenu = 2131099806;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2302,8 +2308,8 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f060068
 			public const int select_dialog_listview = 2131099752;
 			
-			// aapt resource value: 0x7f06009c
-			public const int settingsMenu = 2131099804;
+			// aapt resource value: 0x7f0600a0
+			public const int settingsMenu = 2131099808;
 			
 			// aapt resource value: 0x7f060053
 			public const int shortcut = 2131099731;
@@ -2343,6 +2349,12 @@ namespace ProblemuRegistravimas.AndroidProject
 			
 			// aapt resource value: 0x7f060031
 			public const int start = 2131099697;
+			
+			// aapt resource value: 0x7f06009b
+			public const int statusField = 2131099803;
+			
+			// aapt resource value: 0x7f06009a
+			public const int statusTitle = 2131099802;
 			
 			// aapt resource value: 0x7f06008e
 			public const int status_bar_latest_event_content = 2131099790;
@@ -2407,8 +2419,8 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f060088
 			public const int username = 2131099784;
 			
-			// aapt resource value: 0x7f06009b
-			public const int usersMenu = 2131099803;
+			// aapt resource value: 0x7f06009f
+			public const int usersMenu = 2131099807;
 			
 			// aapt resource value: 0x7f06000a
 			public const int view_offset_helper = 2131099658;

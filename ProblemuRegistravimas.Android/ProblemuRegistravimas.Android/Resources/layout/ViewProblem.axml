@@ -20,25 +20,26 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Title" />
-          <TextView
-              android:id="@+id/titleField"
+            <TextView
+                android:id="@+id/titleField"
                 android:layout_width="fill_parent"
                 android:layout_height="44dp"
                 android:textSize="18dp"
                 android:inputType="text"
                 android:layout_gravity="center_vertical" />
-          <!-- Status section-->
-          <TextView
-            android:id="@+id/statusTitle"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="14dp"
-            android:gravity="bottom|left"
-            android:text="Priority" />
-          <TextView
-            android:id="@+id/statusField"
-            android:layout_width="fill_parent"
-            android:layout_height="44dp" />
+        <!-- Status section-->
+            <TextView
+                android:id="@+id/statusTitle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="14dp"
+                android:gravity="bottom|left"
+                android:text="Status" />
+            <TextView
+                android:id="@+id/statusField"
+                android:layout_width="fill_parent"
+              android:layout_height="44dp"
+              android:textSize="18dp" />
         <!-- Priority section-->
             <TextView
                 android:id="@+id/priorityTitle"
@@ -47,10 +48,11 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Priority" />
-          <TextView
-              android:id="@+id/priorityField"
+            <TextView
+                android:id="@+id/priorityField"
                 android:layout_width="fill_parent"
-                android:layout_height="44dp" />
+              android:layout_height="44dp"
+              android:textSize="18dp" />
         <!-- User section-->
             <TextView
                 android:id="@+id/userLabel"
@@ -59,12 +61,11 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Associated user" />
-          <TextView
-              android:id="@+id/userField"
+            <TextView
+                android:id="@+id/userField"
                 android:layout_width="fill_parent"
                 android:layout_height="44dp"
                 android:textSize="18dp"
-                android:inputType="text"
                 android:layout_gravity="center_vertical" />
         <!-- Location section-->
             <TextView
@@ -74,8 +75,8 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Location" />
-          <TextView
-              android:id="@+id/locationField"
+            <TextView
+                android:id="@+id/locationField"
                 android:layout_width="fill_parent"
                 android:layout_height="44dp"
                 android:textSize="18dp"
@@ -89,25 +90,26 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Description" />
-          <TextView
-              android:inputType="textMultiLine"
+            <TextView
+                android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:minLines="4"
+                android:textSize="18dp"
                 android:maxLines="20"
                 android:layout_height="wrap_content"
                 android:id="@+id/descriptionField" />
         </LinearLayout>
     </ScrollView>
-  <Button
-    android:text="ASSIGN TO ME"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:id="@+id/confirmButton" />
+    <Button
+        android:text="ASSIGN TO ME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/assignButton" />
     <Button
         android:text="CLOSE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/confirmButton" />
+        android:id="@+id/closeButton" />
 </RelativeLayout>
