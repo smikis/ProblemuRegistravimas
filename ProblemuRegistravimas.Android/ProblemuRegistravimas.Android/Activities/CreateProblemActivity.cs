@@ -2,11 +2,9 @@
 using System.Linq;
 using Android.App;
 using Android.OS;
+using Android.Text;
 using Android.Widget;
 using ProblemuRegistravimas.AndroidProject.Http;
-using System.Runtime.Remoting.Contexts;
-using Android.Views;
-using Java.Lang;
 
 namespace ProblemuRegistravimas.AndroidProject.Activities
 {
@@ -38,7 +36,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
 
         }
 
-        private void _locationField_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        private void _locationField_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (e.Text.Count()>= 5)
             {
