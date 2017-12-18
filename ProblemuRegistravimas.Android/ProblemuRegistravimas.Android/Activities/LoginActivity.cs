@@ -45,8 +45,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(_usernameField.Text) && !string.IsNullOrEmpty(_passwordField.Text))
-            {
-                AppSettings.AddOrUpdateValue("username", _usernameField.Text);
+            {               
                 //TODO Implement login logic here
                 var loginModel = new Login
                 {
@@ -56,6 +55,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
 
                 if (_httpService.LoginUser(loginModel))
                 {
+                    AppSettings.AddOrUpdateValue("username", _usernameField.Text);
                     StartActivity(typeof(HomeActivity));
                 }
                     //TODO Show error             

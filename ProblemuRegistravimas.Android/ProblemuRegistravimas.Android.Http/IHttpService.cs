@@ -8,5 +8,6 @@ namespace ProblemuRegistravimas.AndroidProject.Http
         bool LoginUser(Login login);
         List<string> GetUsers();
         List<string> GetLocationAutocompleteList(string query);
+        List<Problem> GetProblems(string status);
     }
 }

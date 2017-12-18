@@ -7,6 +7,8 @@ using System.Text;
 using Newtonsoft.Json;
 using ProblemuRegistravimas.AndroidProject.Http.Models;
 using RestSharp;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 namespace ProblemuRegistravimas.AndroidProject.Http
 {
@@ -14,20 +16,32 @@ namespace ProblemuRegistravimas.AndroidProject.Http
     {
         private static string _locationApiKey = "AIzaSyCscBsgen5gUdcVpe0bGoikdmPzC-I-Qr4";
         private static string _googlePlacesApi = "https://maps.googleapis.com/maps/api/place/autocomplete/json?location=54.9071472,23.955186400000002&radius=30000&strictbounds";
+        private static ISettings AppSettings => CrossSettings.Current;
 
         public bool LoginUser(Login login)
         {
-            //TODO Implement login logic
-            return true;
+            return Cache.Logins.Any(x => x.Username == login.Username && x.Password == login.Password);
         }
 
         public List<string> GetUsers()
         {
             //TODO Implement login logic
-            return new List<string>
+            return Cache.Clients.Select(x=> $"{x.Name} {x.LastName}").ToList();
+        }
+
+        public List<Problem> GetProblems(string status)
+        {
+            var currentUser = AppSettings.GetValueOrDefault("username", string.Empty);
+            switch (status)
             {
-                "Tomas Valiunas", "Random Dude", "Jonas Jonaitis", "Petras petraitis", "Tomas Tomaitis"
-            };
+                case "Assigned":
+                    return Cache.Problems.Where(x => !x.Closed && x.AssignedUser == currentUser).ToList();
+                case "Open":
+                    return Cache.Problems.Where(x => x.AssignedUser == null).ToList();
+                case "Closed":
+                    return Cache.Problems.Where(x => x.Closed && x.AssignedUser == currentUser).ToList();
+            }
+            return Cache.Problems;
         }
 
         public List<string> GetLocationAutocompleteList(string query)

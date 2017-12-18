@@ -16,107 +16,13 @@ namespace ProblemuRegistravimas.AndroidProject.Adapters
 {
      public class ContentAdapter : RecyclerView.Adapter
         {
-            public List<Problem> problems;
+            public List<Problem> _problems;
             public event EventHandler<Problem> ItemClick;
 
-            public ContentAdapter()
+            public ContentAdapter(List<Problem> problems)
             {
-                problems = new List<Problem>();
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2Test problem description 2Test problem description 2Test problem description 2Test problem description 2 Test problem description 2Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description Test problem description 2 Test problem description 2 Test problem description 2 Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem",
-                    Description = "Test problem description"
-                });
-
-                problems.Add(new Problem
-                {
-                    Name = "Test problem 2 ",
-                    Description = "Test problem description 2"
-                });
+                _problems = problems;
+                
             }
 
             public override RecyclerView.ViewHolder
@@ -130,15 +36,15 @@ namespace ProblemuRegistravimas.AndroidProject.Adapters
             {
                 ListContentView vh = holder as ListContentView;
                 vh.Image.SetImageResource(Resource.Drawable.abc_btn_colored_material);
-                vh.Description.Text = problems[position].Description;
-                vh.Title.Text = problems[position].Name;
+                vh.Description.Text = _problems[position].Description;
+                vh.Title.Text = _problems[position].Name;
             }
 
-            public override int ItemCount => problems.Count;
+            public override int ItemCount => _problems.Count;
 
             private void OnClick(int position)
             {
-                ItemClick?.Invoke(this, problems[position]);
+                ItemClick?.Invoke(this, _problems[position]);
             }
 
         }
@@ -157,5 +63,7 @@ namespace ProblemuRegistravimas.AndroidProject.Adapters
 
             ItemView.Click += (sender, e) => listener(AdapterPosition);
         }
+
+
     }
 }

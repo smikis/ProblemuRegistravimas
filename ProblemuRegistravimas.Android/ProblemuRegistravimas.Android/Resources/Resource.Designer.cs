@@ -2643,6 +2643,9 @@ namespace ProblemuRegistravimas.AndroidProject
 			// aapt resource value: 0x7f030039
 			public const int toolbar = 2130903097;
 			
+			// aapt resource value: 0x7f03003a
+			public const int ViewProblem = 2130903098;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
