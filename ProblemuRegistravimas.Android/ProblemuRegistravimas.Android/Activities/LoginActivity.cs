@@ -3,6 +3,8 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 using ProblemuRegistravimas.AndroidProject.Http;
 using ProblemuRegistravimas.AndroidProject.Models;
 
@@ -14,6 +16,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
         private EditText _usernameField;
         private EditText _passwordField;
         private IHttpService _httpService;
+        private static ISettings AppSettings => CrossSettings.Current;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //TODO Implement Dependency Injection
@@ -24,6 +27,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
             SetContentView(Resource.Layout.Login);
 
             _usernameField = FindViewById<EditText>(Resource.Id.username);
+            _usernameField.Text = AppSettings.GetValueOrDefault("username", string.Empty);
             _passwordField = FindViewById<EditText>(Resource.Id.password);
 
             var loginButton = FindViewById<Button>(Resource.Id.loginButton);
@@ -43,6 +47,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
         {
             if (!string.IsNullOrEmpty(_usernameField.Text) && !string.IsNullOrEmpty(_passwordField.Text))
             {
+                AppSettings.AddOrUpdateValue("username", _usernameField.Text);
                 //TODO Implement login logic here
                 var loginModel = new Login
                 {

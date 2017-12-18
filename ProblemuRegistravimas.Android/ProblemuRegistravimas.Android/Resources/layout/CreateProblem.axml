@@ -5,6 +5,7 @@
     android:theme="@android:style/Theme.Material.Light">
     <ScrollView
         android:layout_width="match_parent"
+        android:paddingBottom="50dp"
         android:layout_height="match_parent">
         <LinearLayout
             android:orientation="vertical"
@@ -34,8 +35,8 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Priority" />
-          <Spinner
-              android:id="@+id/priorityField"
+            <Spinner
+                android:id="@+id/priorityField"
                 android:layout_width="fill_parent"
                 android:layout_height="44dp" />
         <!-- User section-->
@@ -46,40 +47,41 @@
                 android:textSize="14dp"
                 android:gravity="bottom|left"
                 android:text="Associated user" />
-          <AutoCompleteTextView
-              android:id="@+id/userField"
+            <AutoCompleteTextView
+                android:id="@+id/userField"
                 android:layout_width="fill_parent"
                 android:layout_height="44dp"
                 android:textSize="18dp"
                 android:inputType="text"
                 android:layout_gravity="center_vertical" />
-          <!-- Location section-->
-          <TextView
-            android:id="@+id/locationLabel"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="14dp"
-            android:gravity="bottom|left"
-            android:text="Location" />
-          <EditText
-            android:id="@+id/locationField"
-            android:layout_width="fill_parent"
-            android:layout_height="44dp"
-            android:textSize="18dp"
-            android:inputType="text"
-            android:layout_gravity="center_vertical" />
+        <!-- Location section-->
+            <TextView
+                android:id="@+id/locationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="14dp"
+                android:gravity="bottom|left"
+                android:text="Location" />
+            <AutoCompleteTextView
+                android:id="@+id/locationField"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:textSize="18dp"
+                android:inputType="text"
+                android:layout_gravity="center_vertical" />
         <!-- Description section-->
-          <TextView
-            android:id="@+id/descriptionLabel"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="14dp"
-            android:gravity="bottom|left"
-            android:text="Description" />
+            <TextView
+                android:id="@+id/descriptionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="14dp"
+                android:gravity="bottom|left"
+                android:text="Description" />
             <EditText
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
-                android:lines="5"
+                android:minLines="4"
+                android:maxLines="20"
                 android:layout_height="wrap_content"
                 android:id="@+id/descriptionField" />
         </LinearLayout>
