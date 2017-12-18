@@ -57,7 +57,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
 
                 if (_httpService.LoginUser(loginModel))
                 {
-
+                    StartActivity(typeof(HomeActivity));
                 }
                     //TODO Show error             
             } 
