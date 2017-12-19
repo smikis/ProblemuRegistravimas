@@ -66,6 +66,23 @@ namespace ProblemuRegistravimas.AndroidProject.Http
             return Cache.Problems.SingleOrDefault(x => x.Id == id);
         }
 
+        public bool CreateProblem(string name, string description, string priority, string location, string client)
+        {
+            var problemId = Cache.Problems.Max(x => x.Id) + 1;
+            var problem = new Problem
+            {
+                Id= problemId,
+                Client = client,
+                Name = name,
+                Description = description,
+                Priority = priority,
+                Location = location,
+                Closed = false
+            };
+            Cache.Problems.Add(problem);
+            return true;
+        }
+
         public List<string> GetLocationAutocompleteList(string query)
         {
             var restClient = new RestClient(_googlePlacesApi);

@@ -15,6 +15,9 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
         private EditText _titleField;
         private AutoCompleteTextView _locationField;
         private AutoCompleteTextView _userField;
+        private EditText _description;
+        private Button _createButton;
+
         private IHttpService _httpService;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,12 +31,24 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
             _titleField = FindViewById<EditText>(Resource.Id.titleField);
             _locationField = FindViewById<AutoCompleteTextView>(Resource.Id.locationField);
             _userField = FindViewById<AutoCompleteTextView>(Resource.Id.userField);
+            _description = FindViewById<EditText>(Resource.Id.descriptionField);
+
             _locationField.TextChanged += _locationField_TextChanged;
+            _createButton = FindViewById<Button>(Resource.Id.confirmButton);
+
+            _createButton.Click += _createButton_Click;
 
             _userField.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, _httpService.GetUsers());
             _locationField.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new List<string>());
             _priorityField.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new List<string> { "Normal", "Critical", "Major"});
 
+        }
+
+        private void _createButton_Click(object sender, System.EventArgs e)
+        {
+            _httpService.CreateProblem(_titleField.Text, _description.Text, _priorityField.SelectedItem.ToString(),
+                _locationField.Text, _userField.Text);
+            StartActivity(typeof(HomeActivity));
         }
 
         private void _locationField_TextChanged(object sender, TextChangedEventArgs e)

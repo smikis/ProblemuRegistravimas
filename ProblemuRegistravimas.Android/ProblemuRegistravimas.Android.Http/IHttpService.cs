@@ -12,5 +12,6 @@ namespace ProblemuRegistravimas.AndroidProject.Http
         Problem GetProblem(int id);
         bool AssignProblem(int problemId);
         bool CloseProblem(int problemId);
+        bool CreateProblem(string name, string description, string priority, string location, string client);
     }
 }
