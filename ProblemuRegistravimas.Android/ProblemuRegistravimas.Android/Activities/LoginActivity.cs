@@ -39,7 +39,7 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
 
         private void ForgotPasswordLink_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(CreateProblemActivity));
+            StartActivity(typeof(Maps));
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -57,6 +57,10 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
                 {
                     AppSettings.AddOrUpdateValue("username", _usernameField.Text);
                     StartActivity(typeof(HomeActivity));
+                }
+                else
+                {
+                    _passwordField.Text = "";
                 }
                     //TODO Show error             
             } 
