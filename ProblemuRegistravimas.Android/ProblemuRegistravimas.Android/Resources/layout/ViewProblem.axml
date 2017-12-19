@@ -38,8 +38,8 @@
             <TextView
                 android:id="@+id/statusField"
                 android:layout_width="fill_parent"
-              android:layout_height="44dp"
-              android:textSize="18dp" />
+                android:layout_height="44dp"
+                android:textSize="18dp" />
         <!-- Priority section-->
             <TextView
                 android:id="@+id/priorityTitle"
@@ -51,8 +51,8 @@
             <TextView
                 android:id="@+id/priorityField"
                 android:layout_width="fill_parent"
-              android:layout_height="44dp"
-              android:textSize="18dp" />
+                android:layout_height="44dp"
+                android:textSize="18dp" />
         <!-- User section-->
             <TextView
                 android:id="@+id/userLabel"
@@ -101,8 +101,8 @@
           <FrameLayout
             android:id="@+id/map"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-        </LinearLayout>
+            android:layout_height="300dp" />
+        </LinearLayout>     
     </ScrollView>
     <Button
         android:text="ASSIGN TO ME"
