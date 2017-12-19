@@ -23,6 +23,23 @@ namespace ProblemuRegistravimas.AndroidProject.Http
             return Cache.Logins.Any(x => x.Username == login.Username && x.Password == login.Password);
         }
 
+        public bool AssignProblem(int problemId)
+        {
+            var currentUser = AppSettings.GetValueOrDefault("username", string.Empty);
+            var problem = Cache.Problems.FirstOrDefault(x => x.Id == problemId);
+            if (problem != null)
+                problem.AssignedUser = currentUser;
+            return true;
+        }
+
+        public bool CloseProblem(int problemId)
+        {
+            var problem = Cache.Problems.FirstOrDefault(x => x.Id == problemId);
+            if (problem != null)
+                problem.Closed = true;
+            return true;
+        }
+
         public List<string> GetUsers()
         {
             //TODO Implement login logic
@@ -37,7 +54,7 @@ namespace ProblemuRegistravimas.AndroidProject.Http
                 case "Assigned":
                     return Cache.Problems.Where(x => !x.Closed && x.AssignedUser == currentUser).ToList();
                 case "Open":
-                    return Cache.Problems.Where(x => x.AssignedUser == null).ToList();
+                    return Cache.Problems.Where(x => x.AssignedUser == null && !x.Closed).ToList();
                 case "Closed":
                     return Cache.Problems.Where(x => x.Closed && x.AssignedUser == currentUser).ToList();
             }

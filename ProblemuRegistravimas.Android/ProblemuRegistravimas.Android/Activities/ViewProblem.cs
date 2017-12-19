@@ -12,6 +12,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 using ProblemuRegistravimas.AndroidProject.Http;
 
 namespace ProblemuRegistravimas.AndroidProject.Activities
@@ -20,17 +22,22 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
     public class ViewProblem : Activity, IOnMapReadyCallback
 
     {
+        private int _id;
         private TextView _priorityField;
         private TextView _titleField;
         private TextView _locationField;
         private TextView _userField;
         private TextView _statusField;
         private TextView _descriptionField;
+        private Button _closeButton;
+        private Button _assignButton;
         private GoogleMap _map;
-        private MapFragment _mapFragment;
-        private IHttpService _httpService;
+        private MapFragment _mapFragment;      
         private double _latitude;
         private double _longitude;
+
+        private static ISettings AppSettings => CrossSettings.Current;
+        private IHttpService _httpService;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,9 +52,11 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
             _userField = FindViewById<TextView>(Resource.Id.userField);
             _statusField = FindViewById<TextView>(Resource.Id.statusField);
             _descriptionField = FindViewById<TextView>(Resource.Id.descriptionField);
+            _assignButton = FindViewById<Button>(Resource.Id.assignButton);
+            _closeButton = FindViewById<Button>(Resource.Id.closeButton);
 
-            var id = Intent.GetIntExtra("PROBLEM_ID", 1);
-            var problem = _httpService.GetProblem(id);
+            _id = Intent.GetIntExtra("PROBLEM_ID", 1);
+            var problem = _httpService.GetProblem(_id);
             _priorityField.Text = problem.Priority;
             _titleField.Text = problem.Name;
             _locationField.Text = problem.Location;
@@ -55,13 +64,37 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
             _statusField.Text = problem.Closed ? "Closed" : "Open";
             _descriptionField.Text = problem.Description;
 
+            if (problem.Closed)
+            {
+                _closeButton.Visibility = ViewStates.Gone;
+                _assignButton.Visibility = ViewStates.Gone;
+            }
+            else
+            {
+                var currentUser = AppSettings.GetValueOrDefault("username", string.Empty);
+                if (currentUser == problem.AssignedUser)
+                {
+                    _closeButton.Visibility = ViewStates.Visible;
+                    _assignButton.Visibility = ViewStates.Gone;
+                }
+                else
+                {
+                    _closeButton.Visibility = ViewStates.Gone;
+                    _assignButton.Visibility = ViewStates.Visible;
+                }
+            }
+           
+
+            _closeButton.Click += _closeButton_Click;
+            _assignButton.Click += _assignButton_Click;
+
             Geocoder coder = new Geocoder(this);
             IList<Address> addresses;
             addresses = coder.GetFromLocationName(problem.Location, 1);
             if (addresses.Count > 0)
             {
-                double latitude = addresses[0].Latitude;
-                double longitude = addresses[0].Longitude;
+                _latitude = addresses[0].Latitude;
+                _longitude = addresses[0].Longitude;
             }
 
             _mapFragment = FragmentManager.FindFragmentByTag("map") as MapFragment;
@@ -81,11 +114,23 @@ namespace ProblemuRegistravimas.AndroidProject.Activities
 
         }
 
+        private void _assignButton_Click(object sender, EventArgs e)
+        {
+            _httpService.AssignProblem(_id);
+            StartActivity(typeof(HomeActivity));
+        }
+
+        private void _closeButton_Click(object sender, EventArgs e)
+        {
+            _httpService.CloseProblem(_id);
+            StartActivity(typeof(HomeActivity));
+        }
+
         public void OnMapReady(GoogleMap map)
         {
             _map = map;
             MarkerOptions markerOpt1 = new MarkerOptions();
-            LatLng kaunas = new LatLng(54.9071472, 23.955186400000002);
+            LatLng kaunas = new LatLng(_latitude, _longitude);
             markerOpt1.SetPosition(kaunas);
             markerOpt1.SetTitle("Kaunas");
             markerOpt1.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueCyan));
